@@ -77,7 +77,8 @@ const d2 = new Data(1, 3, 2022);
 console.log(new DiferencaEntreDatas(d1, d2).executar());
 
 // ========== desafios
-class Fila<T> {
+//Nessa linha esta utilizando constraints
+class Fila<T extends number | string> {
   private fila: Array<T>;
 
   constructor(...args: T[]) {
@@ -113,3 +114,6 @@ console.log(fila.proximo());
 console.log(fila.proximo());
 
 fila.imprimir();
+
+// nessa situação não funcionará pois foi definida os tipos que a classe funcionará - L 81
+// const outraFila = new Fila<boolean>(true, false) 
